@@ -101,3 +101,7 @@ func (b Int) Cmp(x Int) int {
 func (b Int) Bytes() []byte {
 	return b.i.Bytes()
 }
+
+func (b Int) String() string {
+	return b.i.String()
+}
