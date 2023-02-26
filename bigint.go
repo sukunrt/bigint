@@ -51,7 +51,7 @@ func FromBytes(b []byte) Int {
 
 func FromString(s string, base int) (Int, bool) {
 	x, success := bi(0).SetString(s, base)
-	if success {
+	if !success {
 		return Int{}, false
 	}
 	return Int{x}, true
