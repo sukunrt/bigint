@@ -49,6 +49,14 @@ func FromBytes(b []byte) Int {
 	return Int{bi(0).SetBytes(b)}
 }
 
+func FromString(s string, base int) (Int, bool) {
+	x, success := bi(0).SetString(s, base)
+	if success {
+		return Int{}, false
+	}
+	return Int{x}, true
+}
+
 func Copy(x Int) Int {
 	return Int{bi(0).Set(x.i)}
 }
@@ -104,4 +112,12 @@ func (b Int) Bytes() []byte {
 
 func (b Int) String() string {
 	return b.i.String()
+}
+
+func (b Int) BitLen() int {
+	return b.i.BitLen()
+}
+
+func (b Int) Text(base int) string {
+	return b.i.Text(base)
 }
