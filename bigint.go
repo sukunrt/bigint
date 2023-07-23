@@ -121,3 +121,7 @@ func (b Int) BitLen() int {
 func (b Int) Text(base int) string {
 	return b.i.Text(base)
 }
+
+func (b Int) Sqrt() Int {
+	return Int{i: bi(0).Sqrt(b.i)}
+}
